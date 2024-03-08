@@ -1,9 +1,9 @@
 package org
 
-import org.analysis.DataMetrics.{menPercentage, womenPercentage}
+import org.analysis.DataMetrics.{menPercentageCount, womenPercentageCount}
 
 object Main extends App {
 
-  println(s"Percentage of female is $womenPercentage")
-  println(s"Percentage of male is $menPercentage")
+  println(s"Percentage of female is $womenPercentageCount")
+  println(s"Percentage of male is $menPercentageCount")
 }

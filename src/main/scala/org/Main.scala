@@ -1,6 +1,6 @@
 package org
 
-import org.analysis.GenderPercentageCalculator.{menPercentage, womenPercentage}
+import org.analysis.DataMetrics.{menPercentage, womenPercentage}
 
 object Main extends App {
 

@@ -5,9 +5,9 @@ import org.schema.playerInfoSchema
 import org.utils.FileUtils.readFiles
 import org.utils.SparkUtils.spark
 
-object GenderPercentageCalculator {
+object DataMetrics {
 
-  def calculateGenderPercentage(df: DataFrame, col: String, gender: String): Double = {
+  def calculatePercentageOccurrence(df: DataFrame, col: String, gender: String): Double = {
     val totalPlayer = df.count()
     val femaleCount = df.where(s"$col == '$gender'").count()
 
@@ -24,7 +24,7 @@ object GenderPercentageCalculator {
   val man = "Male"
   val woman = "Female"
 
-  val womenPercentage = calculateGenderPercentage(playerInfoDF, genderColumn, woman)
-  val menPercentage = calculateGenderPercentage(playerInfoDF, genderColumn, man)
+  val womenPercentage = calculatePercentageOccurrence(playerInfoDF, genderColumn, woman)
+  val menPercentage = calculatePercentageOccurrence(playerInfoDF, genderColumn, man)
 
 }

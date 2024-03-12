@@ -1,28 +1,22 @@
 package org.analysis
 
 import org.apache.spark.sql.DataFrame
-import org.schema.playerInfoSchema
-import org.utils.FileUtils.readFiles
-import org.utils.SparkUtils.spark
+import org.dataframes.dataframes.playerInfoDF
 
 object DataMetrics {
 
   def calculatePercentageOccurrence(df: DataFrame, col: String, value: String): Double = {
     val totalPlayer = df.count()
-    val femaleCount = df.where(s"$col == '$value'").count()
+    val valueCount = df.where(s"$col == '$value'").count()
 
     if (totalPlayer > 0) {
-      Math.round((femaleCount.toDouble / totalPlayer) * 100)
+      Math.round((valueCount.toDouble / totalPlayer) * 100)
     } else {
       0.0
     }
   }
 
-  val playerInfoDF = readFiles(spark, playerInfoSchema, "data/csv/ittf_player_info.csv")
-
   val genderColumn = "gender"
-  val associationColumn = "assoc"
-  val birthYearColumn = "birthYear"
   val activityColumn = "activity"
   val handTypeColumn = "playingHand"
   val playingStyleColumn = "playingStyle"

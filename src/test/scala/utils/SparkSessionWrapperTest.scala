@@ -4,7 +4,7 @@ import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
-import org.schema.playerInfoSchema
+import org.schema.schema.playerInfoSchema
 
 class SparkSessionWrapperTest extends AnyFlatSpec with Matchers with BeforeAndAfterAll {
 

@@ -1,7 +1,7 @@
 package utils
 
 import org.scalatest.funsuite.AnyFunSuite
-import org.schema.playerInfoSchema
+import org.schema.schema.playerInfoSchema
 import org.utils.FileUtils.readFiles
 import org.utils.SparkUtils.spark
 

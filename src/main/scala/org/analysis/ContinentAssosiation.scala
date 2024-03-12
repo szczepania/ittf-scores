@@ -3,7 +3,7 @@ package org.analysis
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions.col
 
-object CountryAssociation {
+object ContinentAssosiation {
 
   val europeanISOcodes = List("ALB", "AND", "AUT", "BEL", "BLR", "BIH", "BGR", "HRV", "CRO", "MNE", "CZE", "DNK", "EST", "ENG", "FIN", "FRA", "GER", "GRC", "NLD", "NED", "ESP", "IRL", "ISL", "LIE", "LVA", "LIE", "LUX", "LTU", "MKD", "MLT", "MCO", "MDA", "DEU", "NOR", "POL", "PRT", "ROU", "SRB", "SMR", "SVK", "SVN", "SWE", "CHE", "UKR", "VAT", "HUN", "GBR", "ITA", "SLO", "KOS", "SCO", "POR", "DEN", "GGY", "MON", "SUI", "WAL", "ESA", "BUL", "GRE", "LAT", "JEY", "IMN", "COK", "GRN", "FRO")
 

@@ -1,11 +1,11 @@
 package analysisTest
 
-import org.analysis.CountryAssociation
-import org.analysis.CountryAssociation._
+import org.analysis.{ContinentAssociation}
+import org.analysis.ContinentAssociation._
 import utils.SparkSessionWrapperTest
 
-class CountryAssociationTest extends SparkSessionWrapperTest {
-  val countryAssociation = CountryAssociation
+class ContinentAssociationTest extends SparkSessionWrapperTest {
+  val countryAssociation = ContinentAssociation
 
   "countPlayersByCountry" should "count number of players from specified continent" in {
     val result = countryAssociation.countPlayersByContinent(testDF, europeanISOcodes)

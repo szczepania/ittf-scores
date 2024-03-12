@@ -1,6 +1,6 @@
 package org
 
-import org.analysis.CountryAssociation._
+import org.analysis.ContinentAssociation._
 import org.analysis.DataMetrics._
 import org.dataframes.dataframes.mensIndividualsRankingDF
 

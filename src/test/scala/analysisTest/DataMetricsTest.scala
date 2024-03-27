@@ -4,7 +4,7 @@ import org.analysis.DataMetrics
 import utils.SparkSessionWrapperTest
 
 class DataMetricsTest extends SparkSessionWrapperTest {
-  val genderCalculator = DataMetrics
+  val genderCalculator = new DataMetrics
 
   "calculatePercentageOccurrence" should "return 50 for a balanced gender distribution" in {
     val result = genderCalculator.calculatePercentageOccurrence(testDF, "gender", "Female")

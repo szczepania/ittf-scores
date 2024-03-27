@@ -1,6 +1,6 @@
-package org.dataframes
+package org.utils
 
-import org.schema.schema.{playerSchema, playerInfoSchema}
+import org.schema.schema.{playerInfoSchema, playerSchema}
 import org.utils.FileUtils.readFiles
 import org.utils.SparkUtils.spark
 

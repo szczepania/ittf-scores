@@ -1,11 +1,10 @@
 package org.analysis
 
-import org.analysis.ContinentAssociation.americanISOcodes
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions.col
-import org.dataframes.dataframes.mensIndividualsRankingDF
+import org.apache.logging.log4j.scala.Logging
 
-object ContinentAssociation {
+class ContinentAssociation extends Logging {
 
   val europeanISOcodes = List("ALB", "AND", "AUT", "BEL", "BLR", "BIH", "BGR", "HRV", "CRO", "MNE", "CZE", "DNK", "EST", "ENG", "FIN", "FRA", "GER", "GRC", "NLD", "NED", "ESP", "IRL", "ISL", "LIE", "LVA", "LIE", "LUX", "LTU", "MKD", "MLT", "MCO", "MDA", "DEU", "NOR", "POL", "PRT", "ROU", "SRB", "SMR", "SVK", "SVN", "SWE", "CHE", "UKR", "VAT", "HUN", "GBR", "ITA", "SLO", "KOS", "SCO", "POR", "DEN", "GGY", "MON", "SUI", "WAL", "ESA", "BUL", "GRE", "LAT", "JEY", "IMN", "COK", "GRN", "FRO")
 
@@ -18,17 +17,17 @@ object ContinentAssociation {
   val oceaniaISOcodes = List("AUS", "PNG", "NZL", "FJI", "FIJ", "SLB", "FSM", "VUT", "VAN", "WSM", "KIR", "TON", "MHL", "PLW", "NRU", "TUV", "NCL", "PYF", "SOL", "SAM")
 
   def countPlayersByContinent(df: DataFrame, isoCodes: List[String]): Long = {
-    df.
+    logger.info("Start calculating players assigned to association")
+
+    val result = df.
       filter(
         col("assoc").isin(isoCodes: _*)
       )
       .count()
-  }
 
-  val europeanMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, europeanISOcodes)
-  val asianMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, asianISOcodes)
-  val americanMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, americanISOcodes)
-  val africanMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, africanISOcodes)
-  val oceanianMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, oceaniaISOcodes)
+    logger.info(s"Result count is $result")
+
+    result
+  }
 
 }

@@ -8,8 +8,6 @@ import org.utils.SparkUtils.spark
 class FileUtilsTest extends AnyFunSuite {
 
   test("Dataframe should be created from CSV file") {
-    val df = readFiles(spark, playerInfoSchema, "src/test/data/ittf_player_info.csv")
-
-    println(df.show())
+    readFiles(spark, playerInfoSchema, "src/test/data/ittf_player_info.csv")
   }
 }

@@ -16,7 +16,7 @@ object schema {
       StructField("grip", StringType, nullable = true) :: Nil
   )
 
-  val mensSchema: StructType = StructType(
+  val playerSchema: StructType = StructType(
     StructField("rank", IntegerType) ::
       StructField("previous", IntegerType) ::
       StructField("id", IntegerType) ::

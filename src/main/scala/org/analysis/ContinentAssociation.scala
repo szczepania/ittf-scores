@@ -1,7 +1,9 @@
 package org.analysis
 
+import org.analysis.ContinentAssociation.americanISOcodes
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions.col
+import org.dataframes.dataframes.mensIndividualsRankingDF
 
 object ContinentAssociation {
 
@@ -22,5 +24,11 @@ object ContinentAssociation {
       )
       .count()
   }
+
+  val europeanMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, europeanISOcodes)
+  val asianMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, asianISOcodes)
+  val americanMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, americanISOcodes)
+  val africanMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, africanISOcodes)
+  val oceanianMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, oceaniaISOcodes)
 
 }

@@ -1,6 +1,6 @@
 package org.dataframes
 
-import org.schema.schema.{mensSchema, playerInfoSchema}
+import org.schema.schema.{playerSchema, playerInfoSchema}
 import org.utils.FileUtils.readFiles
 import org.utils.SparkUtils.spark
 
@@ -14,7 +14,7 @@ object dataframes {
 
   val mensIndividualsRankingDF = readFiles(
     spark,
-    mensSchema,
+    playerSchema,
     "data/csv/individuals/mens/ittf_rankings_mens.csv"
   )
     .drop("previous", "gender", "previousPoints", "weekNum", "monthNum", "yearNum")

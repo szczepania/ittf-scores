@@ -2,7 +2,6 @@ package org
 
 import org.analysis.ContinentAssociation._
 import org.analysis.DataMetrics._
-import org.dataframes.dataframes.mensIndividualsRankingDF
 
 object Main extends App {
 
@@ -20,12 +19,6 @@ object Main extends App {
 
   println(s"Percentage of players using shakehand grip: $shakehandPercentageCount")
   println(s"Percentage of players using penhold grip: $penholdPercentageCount")
-
-  private val europeanMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, europeanISOcodes)
-  private val asianMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, asianISOcodes)
-  private val americanMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, americanISOcodes)
-  private val africanMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, africanISOcodes)
-  private val oceanianMalePlayers = countPlayersByContinent(mensIndividualsRankingDF, oceaniaISOcodes)
 
   println(s"Number of european male players: $europeanMalePlayers")
   println(s"Number of asian male players: $asianMalePlayers")

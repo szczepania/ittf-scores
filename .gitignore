@@ -31,3 +31,5 @@ project/plugins/project/
 **/target/
 **/*.iml
 /.bsp/
+/project/target/
+/project/project/

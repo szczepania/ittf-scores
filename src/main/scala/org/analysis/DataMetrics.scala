@@ -15,7 +15,10 @@ class DataMetrics extends Logging {
     logger.info(s"Value counted: $value")
 
     if (totalPlayer > 0) {
-      Math.round((valueCount.toDouble / totalPlayer) * 100)
+      val calculatedNumberOfPlayers = Math.round((valueCount.toDouble / totalPlayer) * 100)
+
+      logger.info(s"Calculated percentage number of players is $calculatedNumberOfPlayers")
+      calculatedNumberOfPlayers
     } else {
       logger.error("There are no players")
       0.0

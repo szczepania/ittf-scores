@@ -1,13 +1,13 @@
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
-ThisBuild / scalaVersion := "2.13.13"
+ThisBuild / scalaVersion := "2.12.18"
 
 lazy val root = (project in file("."))
   .settings(
     name := "ittf-scores"
   )
 
-val SparkVersion = "3.5.0"
+val SparkVersion = "3.5.1"
 val ScalaTestVersion = "3.2.11"
 val MockitoVersion = "1.16.23"
 val Log4jVersion = "13.1.0"

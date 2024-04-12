@@ -25,7 +25,7 @@ class ContinentAssociation extends Logging {
       )
       .count()
 
-    logger.info(s"Result count is $result")
+    logger.info(s"Result count for association $isoCodes is $result")
 
     result
   }

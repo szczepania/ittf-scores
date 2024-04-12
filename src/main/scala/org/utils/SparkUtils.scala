@@ -6,6 +6,6 @@ object SparkUtils {
 
   val spark = SparkSession
     .builder()
-    .master("local[*]")
+    .appName("Table tennis players ranking application")
     .getOrCreate()
 }

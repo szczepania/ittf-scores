@@ -7,7 +7,8 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     CountPlayersJob.runCountPlayersJob(spark)
-    CountPlayersByContinentJob.runCountPlayersByContinentJob(spark)
+    CountPlayersByContinentJob.runCountMalePlayersByContinentJob(spark)
+    CountPlayersByContinentJob.runCountFemalePlayersByContinentJob(spark)
 
     spark.stop()
   }

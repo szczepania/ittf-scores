@@ -12,11 +12,17 @@ object dataframes {
     "data/csv/ittf_player_info.csv"
   )
 
-  val mensIndividualsRankingDF = readFiles(
+  val menIndividualsRankingDF = readFiles(
     spark,
     playerSchema,
-    "data/csv/individuals/mens/ittf_rankings_mens.csv"
+    "data/csv/individuals/men/ittf_rankings_mens.csv"
   )
     .drop("previous", "gender", "previousPoints", "weekNum", "monthNum", "yearNum")
 
+  val womenIndividualsRankingDF = readFiles(
+    spark,
+    playerSchema,
+    "data/csv/individuals/women/ittf_rankings_womens.csv"
+  )
+    .drop("previous", "gender", "previousPoints", "weekNum", "monthNum", "yearNum")
 }

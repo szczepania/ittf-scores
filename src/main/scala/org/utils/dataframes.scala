@@ -22,7 +22,7 @@ object dataframes {
   val womenIndividualsRankingDF = readFiles(
     spark,
     playerSchema,
-    "data/csv/individuals/women/ittf_rankings_womens.csv"
+    "data/csv/individuals/women/ittf_rankings_women.csv"
   )
     .drop("previous", "gender", "previousPoints", "weekNum", "monthNum", "yearNum")
 }
